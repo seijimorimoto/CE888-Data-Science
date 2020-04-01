@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+
+<body>
+<center><h1><font color="Black">Heart Disease Prediction</h1></center>
+<h2>     </h2>
+
+<div align="center" style="margin-right: 30%;
+    margin-left: 30%;">
+
+  <form method="POST">
+  <form action="/action_page.php">
+    <label for="age"></label>
+    <input type="number" id="age" name="age" placeholder="Age" min="29" max="77" required size="35">
+
+    <input type="radio" id="male" name="sex" value="1" checked required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="sex" value="0" required>
+    <label for="female">Female</label>
+
+    <label for='cp'></label>
+    <select id='cp' name="cp" required>
+      <option value="" disabled selected>Select chest pain type</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+
+    <input type="number" id="trestbps" name="trestbps" placeholder="Resting blood pressure (in mm Hg on admission to the hospital)" min="94" max="200" required>
+
+    <input type="number" id="chol" name="chol" placeholder="Serum cholestoral in mg/dl" min="126" max="564" required>
+
+    <input type="radio" id="fbsgreater" name="fbs" value="1" checked required>
+    <label for="fbsgreater">Fasting blood sugar > 120 mg/dl</label>
+    <br>
+    <input type="radio" id="fbsless" name="fbs" value="0" required>
+    <label for="fbsless">Fasting blood sugar <= 120 mg/dl</label>
+
+    <input type="number" id="restecg" name="restecg" placeholder="Resting electrocardiographic results" min="0" max="2" required>
+
+    <input type="number" id="thalac" name="thalac" placeholder="Maximum heart rate achieved" min="71" max="202" required>
+
+    <input type="radio" id="exang1" name="exang" value="1" checked required>
+    <label for="exang1">Have exercise induced angina</label>
+    <br>
+    <input type="radio" id="exang0" name="exang" value="0" required>
+    <label for="exang0">Do not have exercise induced angina</label>
+
+    <input type="number" id="oldpeak" name="oldpeak" placeholder="ST depression induced by exercise relative to rest" min="0" max="6.2" step="0.1" required>
+
+    <input type="number" id="slope" name="slope" placeholder="The slope of the peak exercise ST segment" min="0" max="2" required>
+
+    <input type="number" id="ca" name="ca" placeholder="Number of major vessels colored by flourosopy" min="0" max="3" required>
+
+    <input type="number" id="thal" name="thal" placeholder="Thal" min="0" max="3" required>
+
+    <input type="submit" value="Predict">
+  </form>
+</form>
+
+<form method="GET">
+    <center><h2><font color="Black"> Heart disease category is {{ target }}</h2></center>
+    <center><h2><font color="Black"> {{ disease }}</h2></center>
+</form>
+
+
+</div>
+
+
+</body>
+</html>
